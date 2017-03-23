@@ -1,13 +1,24 @@
 
-
 Accessing Ansible variables like ansible_hostname = {{ ansible_hostname }}
+
+Accessing Ansible variables like ansible_hostname = {{ ansible_date_time.epoch }}
 
 We can do math like 1 + 3 = {{ 1+3 }}
 
-See my list: {{ ('a','b','c') }}
+See my list: {{ ['a','b','c'].pop() }}
 
 We can call standardard functions like "lorem ipsum".upper() = {{ "lorem ipsum".upper() }}
 
 {# We can't import libraries or call functions unless they are in the whitelist #}
 {# Call a python function {{ import time; time.time() }} #}
+
+
+{% include "delimiter_test_include.j2" %}
+
+---
+
+{% include "delimiter_test_include.j2" %}
+
+{{ "test" | regex_replace('^(.).*', '\\1') }}
+
 

@@ -3,6 +3,7 @@
 - hosts: localhost
 
   tasks:
+
     - name: Different Tempalte Delimiters
       template:
         src: delimiter_test.j2
